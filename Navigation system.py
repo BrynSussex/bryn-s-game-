@@ -17,8 +17,26 @@ s = {
         'sta3': {'key': 'c', 'pos':[-100,-200]},
     }
 
-def rect(t, w, h):
-    """Draw a rectangle of width w, height h, using turtle t"""
+def rect(t, *args):
+    """rect(t, w, h): Draw a rectangle of width w, height h
+       using turtle t.
+       If called as rect(t, x, y, w, h) move to position (x,y)
+       before drawing the rectangle."""
+    if len(args) == 4:
+        x, y, w, h = args
+        t.penup()
+        t.setpos(x,y)
+        t.seth(0)
+        t.pendown()
+    elif len(args) == 2:
+        w, h = args
+    else:
+        raise RuntimeError("rect(t, w, h) or rect(t, x, y, w, h)")
+    draw_rect(t, w, h)
+    
+def draw_rect(t, w, h):
+    """Draw a rectangle of width w, height h,
+       using turtle t, at the current position."""
     for i in range (2):
         t.forward(w)
         t.right(90)
@@ -204,104 +222,45 @@ def station_1():
     sta.penup()
     sta.speed(0)
     sta.hideturtle()
-    sta.setpos(-250,160)
-    sta.pendown()
-    sta.seth(0)
     
     #top two parts
-    rect(sta, 30, 10)
-    sta.penup()
-    sta.setpos(-255,150)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 40, 10)
-    sta.penup()
-    sta.setpos(-253,140)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 36, 10)
+    rect(sta, -250, 160, 30, 10)
+    rect(sta, -255, 150, 40, 10)
+    rect(sta, -253, 140, 36, 10)
     
-    #conector 1
-    sta.penup()
-    sta.setpos(-250,130)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 30, 10)
+    #connector 1
+    rect(sta, -250, 130, 30, 10)
         
     #ring 1
-    sta.penup()
-    sta.setpos(-310,120)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 150, 20)
+    rect(sta, -310, 120, 150, 20)
     
-    #conector 2
-    sta.penup()
-    sta.setpos(-250,100)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 30, 15)
+    #connector 2
+    rect(sta, -250, 100, 30, 15)
     
     #ring 2
-    sta.penup()
-    sta.setpos(-310,85)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 150, 25)
+    rect(sta, -310, 85, 150, 25)
     
-    #conector 3
-    sta.penup()
-    sta.setpos(-250,60)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 30, 15)
+    #connector 3
+    rect(sta, -250, 60, 30, 15)
     
     #ring 3
-    sta.penup()
-    sta.setpos(-310,45)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 150, 40)
+    rect(sta, -310, 45, 150, 40)
     
-    #conector 4
-    sta.penup()
-    sta.setpos(-250,5)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 30, 15)
+    #connector 4
+    rect(sta, -250, 5, 30, 15)
     
     #ring 4
-    sta.penup()
-    sta.setpos(-310,-10)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 150, 20)
+    rect(sta, -310, -10, 150, 20)
     
-    #conector 5
-    sta.penup()
-    sta.setpos(-250,-30)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 30, 15)
+    #connector 5
+    rect(sta, -250, -30, 30, 15)
 
     #junction 1
-    sta.penup()
-    sta.setpos(-260,-45)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 50, 20)
+    rect(sta, -260, -45, 50, 20)
 
     #arm 1
-    sta.penup()
-    sta.setpos(-260,-46)
-    sta.setheading(270)
-    sta.pendown()
-    rect(sta, 18, 5)
-    sta.penup()
-    sta.setpos(-265,-47)
-    sta.seth(180)
-    sta.pendown()
-    rect(sta, 50, -16)
+    rect(sta, -260, -46, -5, 18)
+    rect(sta, -265, -47, -50, 16)
 
     #motor 1 
     sta.penup()
@@ -323,46 +282,18 @@ def station_1():
     rect(sta, 96, 15)
     
     #arm 2
-    sta.penup()
-    sta.setpos(-210,-46)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 5, 18)
+    rect(sta, -210, -46, 5, 18)
+    rect(sta, -205, -47, 30, 16)
 
-    sta.penup()
-    sta.setpos(-205,-47)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 30, 16)
-
-    #juntion 2 
-    sta.penup()
-    sta.setpos(-175,-46)
-    sta.seth(0)
-    sta.pendown()
-    rect(sta, 18, 18)
+    #juntion 2
+    rect(sta, -175,-46, 18, 18)
 
     #arm 3
-    sta.penup()
-    sta.setpos(-162,-64)
-    sta.seth(270)
-    sta.pendown()
-    rect(sta, 50, 10)
+    rect(sta, -162,-64, -10, 50)
 
     #docking bay
-    sta.penup()
-    sta.setpos(-162,-75)
-    sta.seth(0)
-    sta.pendown()
-    for i in range(5):  
-        sta.forward(10)
-        sta.right(90)
-        sta.forward(2)
-        sta.right(90)
-        sta.forward(10)
-        sta.left(90)
-        sta.forward(5)
-        sta.left(90)
+    for i in range(5):
+        rect(sta, -162, -75-i*5, 10, 2)
         
     #solar panels
     ## strut 1
@@ -371,17 +302,16 @@ def station_1():
     sta.seth(270)
     sta.pendown()
 
-    # TODO This loop only executes once - is that correct?
-    for i in range(1):
-        sta.forward(70)
-        sta.right(90)
-        sta.forward(70)
-        sta.right(90)
-        sta.forward(2)
-        sta.right(90)
-        sta.forward(68)
-        sta.left(90)
-        sta.forward(68)
+    # panel 1
+    sta.forward(70)
+    sta.right(90)
+    sta.forward(70)
+    sta.right(90)
+    sta.forward(2)
+    sta.right(90)
+    sta.forward(68)
+    sta.left(90)
+    sta.forward(68)
 
     ## strut 2
     sta.penup()
@@ -389,17 +319,16 @@ def station_1():
     sta.seth(270)
     sta.pendown()
 
-    # TODO This loop only executes once - is that correct?
-    for i in range(1):
-        sta.forward(70)
-        sta.left(90)
-        sta.forward(70)
-        sta.left(90)
-        sta.forward(2)
-        sta.left(90)
-        sta.forward(68)
-        sta.right(90)
-        sta.forward(68)
+    # panel 2
+    sta.forward(70)
+    sta.left(90)
+    sta.forward(70)
+    sta.left(90)
+    sta.forward(2)
+    sta.left(90)
+    sta.forward(68)
+    sta.right(90)
+    sta.forward(68)
         
     sta.penup()
     sta.setpos(-250,-70)
@@ -785,3 +714,4 @@ def docking_layer():
        
 # planet_layer()
 top_layer()
+# docking_layer()
