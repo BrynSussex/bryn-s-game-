@@ -35,6 +35,7 @@ def dashed_line(t, num_dashes, dash_len, gap_len):
 def planet_layer():
     turtle.clearscreen()
     screen_setup()
+    
     pla = turtle.Turtle()
     pla.hideturtle()
     pla.penup()
@@ -44,6 +45,7 @@ def planet_layer():
     pla.seth(90)
     pla.pendown()
     pla.circle(35)
+    
     sta1 = turtle.Turtle()
     sta1.hideturtle()
     sta1.resizemode("user")
@@ -56,7 +58,8 @@ def planet_layer():
     sta1.seth(90)
     sta1.showturtle()
     sta1.speed(1)
-    sta1.circle(90)
+    while True:
+        sta1.circle(90)
     
     
     
@@ -765,5 +768,5 @@ def docking_layer():
         if sp2.xcor() > -162 and sp2.xcor() < -98 and sp2.ycor() > -112 and sp2.ycor() < -64:
             break
        
-
-top_layer()
+planet_layer()
+# top_layer()
