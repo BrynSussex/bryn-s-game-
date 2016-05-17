@@ -262,24 +262,12 @@ def station_1():
     rect(sta, -260, -46, -5, 18)
     rect(sta, -265, -47, -50, 16)
 
-    #motor 1 
-    sta.penup()
-    sta.setpos(-315,-41)
-    sta.seth(270)
-    sta.pendown()
-    rect(sta, 28, 7)
-    sta.penup()
-    sta.setpos(-322,-37)
-    sta.seth(270)
-    sta.pendown()
-    rect(sta, 36, 9)
+    #motor 1
+    rect(sta, -315, -41, -7, 28)
+    rect(sta, -322, -37, -9, 36)
     
     #ring 5
-    sta.penup()
-    sta.setpos(-331,-7)
-    sta.pendown()
-    sta.seth(270)
-    rect(sta, 96, 15)
+    rect(sta, -331, -7, -15, 96)
     
     #arm 2
     rect(sta, -210, -46, 5, 18)
