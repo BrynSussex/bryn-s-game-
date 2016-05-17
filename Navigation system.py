@@ -3,11 +3,19 @@
 import turtle
 import time
 import random
+import math
 
 # DEFAULT POSITIONS
 top_pos = 200,75
 middle_sta1_pos = 250, -150
 docking_layer_1_pos = 300, 0
+
+# setup stations
+s = {
+        'sta1': {'key': 'a', 'pos':[200,75]},
+        'sta2': {'key': 'b', 'pos':[-300,45]},
+        'sta3': {'key': 'c', 'pos':[-100,-200]},
+    }
 
 def rect(t, w, h):
     """Draw a rectangle of width w, height h, using turtle t"""
@@ -58,9 +66,9 @@ def planet_layer():
     sta1.seth(90)
     sta1.showturtle()
     sta1.speed(1)
+    
     while True:
         sta1.circle(90)
-    
     
     
 def top_layer():
@@ -70,16 +78,24 @@ def top_layer():
     sp = turtle.Turtle()
     sp.color('white')
     sp.penup()
+    
     global top_pos
     sp.setpos(top_pos)
     sp.showturtle()
-    sp.speed(1)      
+    sp.speed(1)
+
+    def turn_and_go(t, dest):
+        x,y = s[dest]['pos']
+        t.seth(t.towards(x,y))
+        t.goto(x,y)
+        
     def sta1():
-        sp.goto(200, 75)
+        turn_and_go(sp, 'sta1')
     def sta2():
-        sp.goto(-300, 45)
+        turn_and_go(sp, 'sta2')
     def sta3():
-        sp.goto(-100,-200)
+        turn_and_go(sp, 'sta3')
+        
     def zoom1():
         global top_pos
         top_pos = sp.pos()
@@ -768,5 +784,5 @@ def docking_layer():
         if sp2.xcor() > -162 and sp2.xcor() < -98 and sp2.ycor() > -112 and sp2.ycor() < -64:
             break
        
-planet_layer()
-# top_layer()
+# planet_layer()
+top_layer()
