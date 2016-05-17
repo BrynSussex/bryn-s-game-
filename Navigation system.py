@@ -1,11 +1,35 @@
+# John attempting to fix key delays
+
 import turtle
 import time
 import random
 
-#DEFAULT POSITIONS
+# DEFAULT POSITIONS
 top_pos = 200,75
 middle_sta1_pos = 250, -150
 docking_layer_1_pos = 300, 0
+
+def rect(t, w, h):
+    """Draw a rectangle of width w, height h, using turtle t"""
+    for i in range (2):
+        t.forward(w)
+        t.right(90)
+        t.forward(h)
+        t.right(90)
+
+def dashed_line(t, num_dashes, dash_len, gap_len):
+    """Draws a dashed line
+
+        t: The turtle
+        num_dashes: How many dashes to draw
+        line_len: The length of each dash
+        gap_len: The gap between the dashes
+    """
+    for i in range(num_dashes):
+        t.forward(gap_len)
+        t.pendown()
+        t.forward(dash_len)
+        t.penup()    
 
 
 def planet_layer():
@@ -110,7 +134,7 @@ def middle_layer_sta1():
         h = random.randrange(220, 340)
         ship = turtle.Turtle()
         ship.hideturtle()
-        ship.color('gray')
+        ship.color('blue')
         ship.penup()
         ship.speed(0)
         ship.setpos(x, 260)
@@ -155,9 +179,6 @@ def zoom():
     turtle.listen()
 
 
-
-    
-
 def station_1():
     turtle.tracer(1000)
     sta= turtle.Turtle()
@@ -168,221 +189,154 @@ def station_1():
     sta.setpos(-250,160)
     sta.pendown()
     sta.seth(0)
+    
     #top two parts
-    for i in range (2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(10)
-        sta.right(90)
+    rect(sta, 30, 10)
     sta.penup()
     sta.setpos(-255,150)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(40)
-        sta.right(90)
-        sta.forward(10)
-        sta.right(90)
+    rect(sta, 40, 10)
     sta.penup()
     sta.setpos(-253,140)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(36)
-        sta.right(90)
-        sta.forward(10)
-        sta.right(90)
+    rect(sta, 36, 10)
+    
     #conector 1
     sta.penup()
     sta.setpos(-250,130)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(10)
-        sta.right(90)
+    rect(sta, 30, 10)
+        
     #ring 1
     sta.penup()
     sta.setpos(-310,120)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(150)
-        sta.right(90)
-        sta.forward(20)
-        sta.right(90)
+    rect(sta, 150, 20)
+    
     #conector 2
     sta.penup()
     sta.setpos(-250,100)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(15)
-        sta.right(90)
+    rect(sta, 30, 15)
+    
     #ring 2
     sta.penup()
     sta.setpos(-310,85)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(150)
-        sta.right(90)
-        sta.forward(25)
-        sta.right(90)
+    rect(sta, 150, 25)
+    
     #conector 3
     sta.penup()
     sta.setpos(-250,60)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(15)
-        sta.right(90)
+    rect(sta, 30, 15)
+    
     #ring 3
     sta.penup()
     sta.setpos(-310,45)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(150)
-        sta.right(90)
-        sta.forward(40)
-        sta.right(90)
+    rect(sta, 150, 40)
+    
     #conector 4
     sta.penup()
     sta.setpos(-250,5)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(15)
-        sta.right(90)
+    rect(sta, 30, 15)
+    
     #ring 4
     sta.penup()
     sta.setpos(-310,-10)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(150)
-        sta.right(90)
-        sta.forward(20)
-        sta.right(90)
+    rect(sta, 150, 20)
+    
     #conector 5
     sta.penup()
     sta.setpos(-250,-30)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(15)
-        sta.right(90)
+    rect(sta, 30, 15)
+
     #junction 1
     sta.penup()
     sta.setpos(-260,-45)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(50)
-        sta.right(90)
-        sta.forward(20)
-        sta.right(90)
+    rect(sta, 50, 20)
+
     #arm 1
     sta.penup()
     sta.setpos(-260,-46)
     sta.setheading(270)
     sta.pendown()
-    for i in range(2):
-        sta.forward(18)
-        sta.right(90)
-        sta.forward(5)
-        sta.right(90)
+    rect(sta, 18, 5)
     sta.penup()
     sta.setpos(-265,-47)
     sta.seth(180)
     sta.pendown()
-    for i in range(2):
-        sta.forward(50)
-        sta.left(90)
-        sta.forward(16)
-        sta.left(90)
+    rect(sta, 50, -16)
+
     #motor 1 
     sta.penup()
     sta.setpos(-315,-41)
     sta.seth(270)
     sta.pendown()
-    for i in range(2):
-        sta.forward(28)
-        sta.right(90)
-        sta.forward(7)
-        sta.right(90)
+    rect(sta, 28, 7)
     sta.penup()
     sta.setpos(-322,-37)
     sta.seth(270)
     sta.pendown()
-    for i in range(2):
-        sta.forward(36)
-        sta.right(90)
-        sta.forward(9)
-        sta.right(90)
+    rect(sta, 36, 9)
+    
     #ring 5
     sta.penup()
     sta.setpos(-331,-7)
     sta.pendown()
     sta.seth(270)
-    for i in range(2):
-        sta.forward(96)
-        sta.right(90)
-        sta.forward(15)
-        sta.right(90)
+    rect(sta, 96, 15)
+    
     #arm 2
     sta.penup()
     sta.setpos(-210,-46)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(5)
-        sta.right(90)
-        sta.forward(18)
-        sta.right(90)
+    rect(sta, 5, 18)
+
     sta.penup()
     sta.setpos(-205,-47)
     sta.seth(0)
     sta.pendown()
-    for i in range(2):
-        sta.forward(30)
-        sta.right(90)
-        sta.forward(16)
-        sta.right(90)
+    rect(sta, 30, 16)
+
     #juntion 2 
     sta.penup()
     sta.setpos(-175,-46)
     sta.seth(0)
     sta.pendown()
-    for i in range(4):
-        sta.forward(18)
-        sta.right(90)
+    rect(sta, 18, 18)
+
     #arm 3
     sta.penup()
     sta.setpos(-162,-64)
     sta.seth(270)
     sta.pendown()
-    for i in range(2):
-        sta.forward(50)
-        sta.right(90)
-        sta.forward(10)
-        sta.right(90)
+    rect(sta, 50, 10)
+
     #docking bay
     sta.penup()
     sta.setpos(-162,-75)
     sta.seth(0)
     sta.pendown()
-    for i in range(5):
+    for i in range(5):  
         sta.forward(10)
         sta.right(90)
         sta.forward(2)
@@ -391,12 +345,15 @@ def station_1():
         sta.left(90)
         sta.forward(5)
         sta.left(90)
+        
     #solar panels
-        #strut 1
+    ## strut 1
     sta.penup()
     sta.setpos(-250,-65)
     sta.seth(270)
     sta.pendown()
+
+    # TODO This loop only executes once - is that correct?
     for i in range(1):
         sta.forward(70)
         sta.right(90)
@@ -407,11 +364,14 @@ def station_1():
         sta.forward(68)
         sta.left(90)
         sta.forward(68)
-        #strut 2
+
+    ## strut 2
     sta.penup()
     sta.setpos(-220,-65)
     sta.seth(270)
     sta.pendown()
+
+    # TODO This loop only executes once - is that correct?
     for i in range(1):
         sta.forward(70)
         sta.left(90)
@@ -422,6 +382,7 @@ def station_1():
         sta.forward(68)
         sta.right(90)
         sta.forward(68)
+        
     sta.penup()
     sta.setpos(-250,-70)
     sta.seth(0)
@@ -433,6 +394,7 @@ def station_1():
         sta.right(90)
         sta.forward(14)
         sta.left(180)
+        
     sta.penup()
     sta.setpos(-252,-70)
     sta.seth(180)
@@ -444,6 +406,7 @@ def station_1():
         sta.left(90)
         sta.forward(18)
         sta.right(180)
+        
     sta.penup()
     sta.setpos(-272,-133)
     sta.seth(90)
@@ -455,6 +418,7 @@ def station_1():
         sta.left(90)
         sta.forward(18)
         sta.right(180)
+        
     sta.penup()
     sta.setpos(-220,-70)
     sta.seth(180)
@@ -466,6 +430,7 @@ def station_1():
         sta.left(90)
         sta.forward(14)
         sta.right(180)
+        
     sta.penup()
     sta.setpos(-218,-70)
     sta.seth(0)
@@ -477,6 +442,7 @@ def station_1():
         sta.right(90)
         sta.forward(18)
         sta.left(180)
+        
     sta.penup()
     sta.setpos(-198,-133)
     sta.seth(90)
@@ -488,6 +454,7 @@ def station_1():
         sta.right(90)
         sta.forward(18)
         sta.right(180)
+        
     sta.penup()
     sta.setpos(-154,-135)
     sta.seth(270)
@@ -499,6 +466,7 @@ def station_1():
         sta.right(90)
         sta.forward(18)
         sta.right(180)
+        
     sta.penup()
     sta.setpos(-260,-135)
     sta.seth(270)
@@ -510,6 +478,8 @@ def station_1():
         sta.right(90)
         sta.forward(18)
         sta.right(180)
+
+    
     skm = turtle.Turtle()
     skm.hideturtle()
     skm.color('white')
@@ -517,23 +487,13 @@ def station_1():
     skm.penup()
     skm.setpos(-162,-64)
     skm.seth(0)
-    for i in range(8):
-        skm.forward(5)
-        skm.pendown()
-        skm.forward(3)
-        skm.penup()
+            
+    dashed_line(skm, 8, 5, 3)       
     skm.right(90)
-    for i in range(6):
-        skm.forward(5)
-        skm.pendown()
-        skm.forward(3)
-        skm.penup()
+    dashed_line(skm, 6, 5, 3)        
     skm.right(90)
-    for i in range(8):
-        skm.forward(5)
-        skm.pendown()
-        skm.forward(3)
-        skm.penup()
+    dashed_line(skm, 8, 5, 3)
+   
     skm.setpos(-162,-77)
     skm.write('Docking Port', font=('Arial', 7, 'normal'))
     turtle.update()
