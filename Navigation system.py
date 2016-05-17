@@ -39,6 +39,10 @@ def dashed_line(t, num_dashes, dash_len, gap_len):
         t.forward(dash_len)
         t.penup()    
 
+def turn_and_go(t, dest):
+    x,y = s[dest]['pos']
+    t.seth(t.towards(x,y))
+    t.goto(x,y)
 
 def planet_layer():
     turtle.clearscreen()
@@ -83,11 +87,6 @@ def top_layer():
     sp.setpos(top_pos)
     sp.showturtle()
     sp.speed(1)
-
-    def turn_and_go(t, dest):
-        x,y = s[dest]['pos']
-        t.seth(t.towards(x,y))
-        t.goto(x,y)
         
     def sta1():
         turn_and_go(sp, 'sta1')
