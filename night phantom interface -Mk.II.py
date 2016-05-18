@@ -1052,7 +1052,7 @@ or clogged up."""),
                ------------------------------
                Modified Light Troop Transport
                -----------------------------
-           Ship Type: Heavely modifyed Phantom 257.
+           Ship Type: Heavily modified Phantom 257.
                       Added armour, upgraded engines
                       and thrusters.
            Fuel Type: Uranium Power Cells, Modular
@@ -1127,22 +1127,24 @@ Electrical parts kit*2
                 |    Originating from Kepler-186f, Junkers are descended from the crew        |
                 |    of a Mk.4 Cargo Carrier that crashed in the eastern junk yards long      |
                 |    ago. A rescue party was sent out, but when they arrived, they            |
-                |    found the survivors franticly trying to repair the wrecked ship          |  
+                |    found the survivors frantically trying to repair the wrecked ship        |  
                 |    that the party had deemed beyond repair. The rescue party was unable     |
                 |    to convince them to leave. They left the junkers where they              |
                 |    continued their hopeless task until death. However, even though the      |
-                |    original crew died, their descendants continue their ancestors mission   |
+                |    original crew died, their descendants continue their ancestors' mission  |
                 |    doing whatever it takes to finish the job. There have even been reports  |
                 |    of junkers murdering other scavengers over parts.                        |
+                |                                                                             |
                 |    One eyewitness attests to this.                                          |
                 |    "Me and my friend were scavenging around in a junk yard looking for a    |
                 |    UPC I think it was. Anyway we found one and suddenly this Junker         | 
-                |    appeared out of nowhere. It spotted the UPC in my mates hand and it      |
-                |    started making these deep growling noises. Is all of a sudden lunged     |
+                |    appeared out of nowhere. It spotted the UPC in my mate's hand and it     |
+                |    started making these deep growling noises. It all of a sudden lunged     |
                 |    towards us with this huge as club and-... oh man. My friend was          | 
                 |    screaming and the blood- there was blood every where. It was...It was    | 
                 |    horrible. My friends screaming was cut short... That thing just          | 
                 |    snatched the power cell and ditched."                                    |
+                |                                                                             |
                 |    Other eyewitness' and survivors of similar attacks claim that they       |
                 |    were only saved because they put down the part the junker had wanted     |   
                 |    and left the area quickly before it could attack. It is recommended to   |
